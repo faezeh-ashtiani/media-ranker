@@ -1,0 +1,11 @@
+<div class='works'>
+  <h2>All Works</h2>
+  <ul class='works-list'>
+    <% @works.each do |work| %>
+      <li class='works-list-item'>
+        <strong><%= work.title %><%# link_to driver.name, driver_path(driver.id) %></strong> | 
+        <p>By <%= work.title%></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

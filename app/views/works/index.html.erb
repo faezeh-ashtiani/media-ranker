@@ -4,7 +4,7 @@
     <% @works.each do |work| %>
       <li class='works-list-item'>
         <strong><%= work.title %><%# link_to driver.name, driver_path(driver.id) %></strong> | 
-        <p>By <%= work.title%></p>
+        <p>By <%= work.creator%></p>
       </li>
     <% end %>
   </ul>

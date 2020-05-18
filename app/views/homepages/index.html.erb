@@ -1,0 +1,19 @@
+<main>
+  <section class="spotlight">
+    <h2 class="spotlight__header">
+      <span class="spotlight__header--prefix">Media Spotlight</span>
+      <%= link_to "Change This Top Work Code in homepages/indes.html", root_path, class: "spotlight__link-to"%> by Change this too
+    </h2>
+    <p class="spotlight__description">
+      # votes - spotlight work description
+    </p>
+  </section>
+
+  <hr class="root__hr" />
+  <section class="top-ten__container">
+    <%= render partial: "homepage", locals: { works_name: "Albums", variable: @albums } %>
+    <%= render partial: "homepage", locals: { works_name: "Books", variable: @books } %>
+    <%= render partial: "homepage", locals: { works_name: "Movies", variable: @movies } %>
+  </section>
+
+</main>

@@ -8,6 +8,39 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header class="app-header__header">
+    <h1>
+      <%= link_to "Media Ranker", root_path %>
+      <small>Ranking the Best of Everything</small>
+    </h1>
+
+    <nav class="app-header__nav">
+      <ul class="nav app-header__site-nav-container">
+        <li class="nav-item app-header__nav_item">
+          <%= link_to "View top media", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item app-header__nav_item">
+        <%= link_to "View all media", works_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item app-header__nav_item">
+          <%= link_to "Add a new work", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item app-header__nav_item">
+        <%= link_to "View all users", root_path, class: "nav-link" %>
+        </li>
+      </ul>
+
+      <ul class="nav app-header__user-nav-container">
+        <li class="nav-item app-header__nav_item">
+          <%= link_to "Logged in as User", root_path, class: "btn btn-primary" %>
+        </li>
+        <li class="nav-item app-header__nav_item">
+          <%= link_to "Log Out", root_path, class: "btn btn-primary" %>
+        </li>
+      </ul>
+    </nav>
+    
+  </header>
 
   <body>
     <%= yield %>

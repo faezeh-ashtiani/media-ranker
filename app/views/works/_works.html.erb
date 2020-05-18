@@ -1,0 +1,26 @@
+<section class="media-table">
+    <h4><%= works_name %></h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th width=80>Votes</th>
+          <th>Title</th>
+          <th>Created By</th>
+          <th width=100>Published</th>
+          <th width=100>Upvote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% variable.each do |work| %>
+          <tr>
+            <td>v#</td>
+            <td><%= link_to "#{work.title}", work_path(work.id) %></td>
+            <td><%= work.creator %></td>
+            <td><%= work.publication_year %></td>
+            <td><%# link_to "Logout", works_path, method: :post, class: "btn btn-primary", rel: "nofollow" %></td>
+            <td><a class="btn btn-primary" rel="nofollow" data-method="post" href="/works/571/upvote">Upvote</a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </section>

@@ -1,0 +1,17 @@
+<section class="top-ten__list-container">
+    <h2 class="top-ten__header">
+      Top <%= works_name %>
+    </h2>
+    <ul class="list-group top-ten__list">
+      <% variable.each do |work| %>
+        <li class="list-group-item">
+          <h4>
+            <%= link_to "#{work.title}", work_path(work.id) %>
+            <small class="top-ten__creator">by <%= work.creator %></small>
+          </h4>
+          <p># of votes</p>
+        </li>
+      <% end %>
+    </ul>
+    <!-- <a href="/works.movies">View More Movies</a> -->
+    </section>

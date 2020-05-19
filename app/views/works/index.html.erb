@@ -1,3 +1,11 @@
+<section class="alert__container">
+  <div class="alert alert-success">
+    <% flash.each do |name, message| %>
+      <span><%= message %></span>
+    <% end %>
+  </div>
+</section>
+
 <main>
   <h2>List of Works</h2>
   <%= render partial: "works", locals: { works_name: "Albums", variable: @albums } %>

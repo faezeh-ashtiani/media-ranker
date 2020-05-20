@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
 
     session[:user_id] = user.id
-    session[:user] = user
+    # session[:user] = user
     redirect_to root_path
   end
 
@@ -40,14 +40,14 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def current
-    @user = User.find_by(id: session[:user_id])
-    if @user.nil?
-      flash[:error] = "You must be logged in to view this page"
-      redirect_to root_path
-      return
-    end
-  end
+  # def current
+  #   @user = User.find_by(id: session[:user_id])
+  #   if @user.nil?
+  #     flash[:error] = "You must be logged in to view this page"
+  #     redirect_to root_path
+  #     return
+  #   end
+  # end
 
   def index
     # if params[:author_id]

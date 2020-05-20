@@ -1,4 +1,7 @@
 class WorksController < ApplicationController
+
+  before_action :find_work, only: [:show, :edit, :update, :destroy]
+
   def index
     # if params[:author_id]
     #   # This is the nested route, /author/:author_id/books
@@ -6,15 +9,18 @@ class WorksController < ApplicationController
     #   @books = @author.books
 
     # else
-      @albums = Work.top_works("album")
-      @books = Work.top_works("book")
-      @movies = Work.top_works("movie")
+      # @albums = Work.top_works("album")
+      # @books = Work.top_works("book")
+      # @movies = Work.top_works("movie")
+      @movies = Work.where(category: :movie)
+      @books = Work.where(category: :book)
+      @albums = Work.where(category: :album)
     # end
   end
 
   def show
-    work_id = params[:id]
-    @work = Work.find_by(id: work_id)
+    # work_id = params[:id]
+    # @work = Work.find_by(id: work_id)
     if @work.nil?
       head :not_found
       return
@@ -54,7 +60,7 @@ class WorksController < ApplicationController
 
     # else
       # This is the 'regular' route, /books/new
-      @work = Work.find_by(id: params[:id])
+      # @work = Work.find_by(id: params[:id])
 
       if @work.nil?
         head :not_found
@@ -64,7 +70,7 @@ class WorksController < ApplicationController
   end
 
   def update
-    @work = Work.find_by(id: params[:id])
+    # @work = Work.find_by(id: params[:id])
 
     if @work.nil?
       head :not_found
@@ -81,7 +87,7 @@ class WorksController < ApplicationController
   end
 
   def destroy
-    @work = Work.find_by(id: params[:id])
+    # @work = Work.find_by(id: params[:id])
     if @work.nil?
       head :not_found
       return
@@ -97,4 +103,9 @@ class WorksController < ApplicationController
   def work_params
     return params.require(:work).permit(:category, :title, :creator, :publication_year, :description)
   end
+
+  def find_work
+    @work = Work.find_by_id(id: params[:id])
+  end
+
 end

@@ -10,10 +10,10 @@
   <section class="spotlight">
     <h2 class="spotlight__header">
       <span class="spotlight__header--prefix">Media Spotlight</span>
-      <%= link_to "Change This Top Work Code in homepages/indes.html", root_path, class: "spotlight__link-to"%> by Change this too
+      <%= link_to Work.spotlight.title, root_path, class: "spotlight__link-to"%> by <%= Work.spotlight.creator %>
     </h2>
     <p class="spotlight__description">
-      # votes - spotlight work description
+      <%= Work.spotlight.votes.count %> votes - <%= Work.spotlight.description %>
     </p>
   </section>
 

@@ -1,7 +1,16 @@
 <section class="alert__container">
   <div class="alert alert-success">
     <% flash.each do |name, message| %>
-      <span><%= message %></span>
+      <% unless message.respond_to?(:each) %>
+        <span><%= message %></span>
+      <% else %>
+        <span><%= message[0] %></span>
+        <ul>
+          <% message[(1..)].each do |error| %>
+            <li><%= message[1] %></li>
+          <% end %>
+        </ul>
+      <% end %>
     <% end %>
   </div>
 </section>

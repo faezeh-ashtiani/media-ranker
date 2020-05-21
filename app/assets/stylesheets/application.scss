@@ -93,6 +93,13 @@ a {
   // -webkit-text-decoration-skip: objects;
 }
 
+a:hover {
+  text-decoration: none;
+  background-color: transparent;
+  color: rgb(33, 126, 117);
+  // -webkit-text-decoration-skip: objects;
+}
+
 
 .app-header__header {
   max-width: 100%;
@@ -167,6 +174,18 @@ a {
 .btn-secondary {
   color: #fff;
   background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-primary:hover {
+  background-color: rgb(33, 126, 117);
+  color: white;
+  border-color: rgb(38, 132, 166);
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #353739;
   border-color: #6c757d;
 }
 

@@ -58,6 +58,14 @@ hr {
   margin-bottom: 0;
 }
 
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: none
+}
+
 
 .top-ten__creator {
   color: slategrey;

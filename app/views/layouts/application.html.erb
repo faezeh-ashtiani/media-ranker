@@ -47,10 +47,9 @@
     </nav>
     
   </header>
-  
-  <%# from homepages index view %>
+
   <section class="alert__container">
-    <div class=<% alert_class(flash) %> >
+    <div class="<%= alert_class(flash) %>" > 
       <% flash.each do |name, message| %>
         <% unless message.respond_to?(:each) %>
           <span><%= message %></span>

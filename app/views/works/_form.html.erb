@@ -1,20 +1,3 @@
-<section class="alert__container">
-  <div class="alert alert-warning">
-    <% flash.each do |name, message| %>
-      <span><%= message %></span>
-    <% end %>
-    <% if @work.errors.any? %>
-      <ul>
-        <% @work.errors.each do |column, message| %>
-          <li>
-            <%= column %> <%= message %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-  </div>
-</section>
-
 <main>
   <section>
     <%= form_with model: @work, class: 'create-work' do |f| %>

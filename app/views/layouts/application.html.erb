@@ -47,6 +47,24 @@
     </nav>
     
   </header>
+  
+  <%# from homepages index view %>
+  <section class="alert__container">
+    <div class=<% alert_class(flash) %> >
+      <% flash.each do |name, message| %>
+        <% unless message.respond_to?(:each) %>
+          <span><%= message %></span>
+        <% else %>
+          <span><%= message[0] %></span>
+          <ul>
+            <% message[(1..)].each do |error| %>
+              <li><%= message[1] %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
 
   <body>
     <%= yield %>

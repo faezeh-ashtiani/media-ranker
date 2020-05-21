@@ -9,18 +9,17 @@ class UsersController < ApplicationController
       # new user
       user = User.create(username: params[:user][:username])
       if !user.save
-        flash[:error] = "Unable to login"
+        flash[:warning] = "Unable to login"
         redirect_to root_path
         return
       end
-      flash[:welcome] = "Successfully created new user #{user.username} with ID #{user.id} "
+      flash[:success] = "Successfully created new user #{user.username} with ID #{user.id} "
     else
       # existing user
-      flash[:welcome] = "Successfully logged in as existing user #{user.username}"
+      flash[:success] = "Successfully logged in as existing user #{user.username}"
     end
 
     session[:user_id] = user.id
-    # session[:user] = user
     redirect_to root_path
   end
 
@@ -29,35 +28,19 @@ class UsersController < ApplicationController
       user = User.find_by(id: session[:user_id])
       unless user.nil?
         session[:user_id] = nil
-        flash[:notice] = "Successfully logged out"
+        flash[:success] = "Successfully logged out"
       else
         session[:user_id] = nil
-        flash[:notice] = "Error Unknown User"
+        flash[:warning] = "Error Unknown User"
       end
     else
-      flash[:error] = "You must be logged in to log out"
+      flash[:warning] = "You must be logged in to log out"
     end
     redirect_to root_path
   end
 
-  # def current
-  #   @user = User.find_by(id: session[:user_id])
-  #   if @user.nil?
-  #     flash[:error] = "You must be logged in to view this page"
-  #     redirect_to root_path
-  #     return
-  #   end
-  # end
-
   def index
-    # if params[:author_id]
-    #   # This is the nested route, /author/:author_id/books
-    #   @author = Author.find_by(id: params[:author_id])
-    #   @books = @author.books
-
-    # else
-      @users = User.all.order(:created_at)
-    # end
+    @users = User.all.order(:created_at)
   end
 
   def show
@@ -67,6 +50,5 @@ class UsersController < ApplicationController
       return
     end
   end
-
 
 end

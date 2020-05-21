@@ -13,6 +13,10 @@
   color: #424242;
 }
 
+.spotlight__header--prefix::after {
+  content: ":";
+}
+
 .spotlight__link-to {
   border-bottom: 2px solid;
 }

@@ -1,6 +1,6 @@
 <main>
-  <h2>User Summary: <%= link_to "#{User.find_by(id: session[:user_id]).username}", user_path(User.find_by(id: session[:user_id]).id) %></h2>
-  <p>Joined site <%= User.find_by(id: session[:user_id]).created_at %></p>
+  <h2>User Summary: <%= link_to @user.username, user_path(@user.id) %></h2>
+  <p>Joined site <%= @user.created_at %></p>
 
   <section class="user-votes__container">
     <h3 class="user-votes__header">Votes</h3>
@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% User.find_by(id: session[:user_id]).votes.each do |vote| %>
+        <% @user.votes.each do |vote| %>
           <tr>
             <td>
               <%= link_to Work.find_by(id: vote.work_id).title , work_path(vote.work_id) %>

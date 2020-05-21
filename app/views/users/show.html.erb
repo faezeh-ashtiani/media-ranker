@@ -23,7 +23,7 @@
             <td><%= Work.find_by(id: vote.work_id).creator %></td>
             <td><%= Work.find_by(id: vote.work_id).publication_year %></td>
             <td><%= Work.find_by(id: vote.work_id).category.capitalize %></td>
-            <td><%= vote.created_at %></td>
+            <td><%= vote.created_at.strftime("%B %e, %Y") %></td>
           </tr>
         <% end %>
       </tbody>

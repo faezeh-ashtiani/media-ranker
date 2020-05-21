@@ -12,9 +12,9 @@ class WorksController < ApplicationController
       # @albums = Work.top_works("album")
       # @books = Work.top_works("book")
       # @movies = Work.top_works("movie")
-      @movies = Work.where(category: :movie)
-      @books = Work.where(category: :book)
-      @albums = Work.where(category: :album)
+      @movies = Work.where(category: :movie).sort{ |a, b| b.votes.count <=> a.votes.count }
+      @books = Work.where(category: :book).sort{ |a, b| b.votes.count <=> a.votes.count }
+      @albums = Work.where(category: :album).sort{ |a, b| b.votes.count <=> a.votes.count }
     # end
   end
 
@@ -105,7 +105,7 @@ class WorksController < ApplicationController
   end
 
   def find_work
-    @work = Work.find_by_id(id: params[:id])
+    @work = Work.find_by_id(params[:id])
   end
 
 end

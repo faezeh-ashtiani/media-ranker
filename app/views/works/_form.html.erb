@@ -20,10 +20,11 @@
     <%= form_with model: @work, class: 'create-work' do |f| %>
       <h2>Add a new work</h2>
       <div class="form-group">
-        <%= f.label :category %>
-        <%= f.select :category, 
-            ["album", "book", "movie"], 
-            class: "form-control"  
+        <%= f.label "Category:" %>
+        <%= f.select :category,
+            options_for_select(["album", "book", "movie"], @work.category),
+            {include_blank: false},
+            {class: "form-control"} 
         %>
       </div>
       <div class="form-group">

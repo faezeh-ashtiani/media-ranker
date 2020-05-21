@@ -30,11 +30,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><%= link_to "User", work_path %></td>
-        <%# <td><a href="/users/700">abc</a></td>  %>
-        <td><%= "Date" %></td>
-      </li>
+      <% @work.votes.each do |vote| %>
+        <tr>
+          <td><%= link_to vote.user.username, user_path(vote.user.id) %></td>
+          <td><%= vote.created_at.strftime("%B %e, %Y") %></td>
+        </li>
+      <% end %>
     </ul>
   </section>  
 

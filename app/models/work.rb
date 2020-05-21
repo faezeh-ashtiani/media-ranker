@@ -5,7 +5,7 @@ class Work < ApplicationRecord
   has_many :users, through: :votes
 
   def self.top_works(category)
-    where(category: category).sort{ |a, b| b.votes.count <=> a.votes.count }.f
+    where(category: category).sort{ |a, b| b.votes.count <=> a.votes.count }.first(10)
     # result = Work.left_outer_joins(:votes)
     #                .group('works.id')
     #                .order('count(user_id) desc, title asc').limit(10)

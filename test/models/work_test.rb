@@ -27,18 +27,6 @@ describe Work do
   end
 
   describe 'validations' do
-    # before do
-    #   @work_album = Work.new(
-    #     {
-    #       category: "album",
-    #       title: "21",
-    #       creator: "Adele",
-    #       publication_year: 2011,
-    #       description: "Awesome songs by The great Adele"
-    #     }
-    #   )
-    # end
-
     it 'is valid when all fields are present' do
       @work_album.save
       result = @work_album.valid?
@@ -113,7 +101,7 @@ describe Work do
         work_3_votes = works(:work_3).votes.count
         expect(votes_count.max).must_equal work_3_votes
       end
-      
+
       it "if there is a tie with votes, it picks the most recent" do
         vote_14 = Vote.create(work_id: works(:work_4).id, user_id: users(:user_4).id)
         # puts vote_14.valid? => true
@@ -122,6 +110,5 @@ describe Work do
       end
 
     end
-
   end
 end

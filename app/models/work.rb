@@ -13,7 +13,10 @@ class Work < ApplicationRecord
   end
 
   def self.spotlight
-    sort_by_votes = all.sort{ |a, b| b.votes.count <=> a.votes.count }
-    sort_by_votes.sort{ |a, b| b.created_at <=> a.created_at }.first
+    sorted = all.sort do |a, b|
+      vote_check = b.votes.count <=> a.votes.count # if they are the same (the result of the spaceship comparigon is 0)
+      !vote_check.zero? ? vote_check : a.title <=> b.title
+    end
+    sorted.first
   end
 end

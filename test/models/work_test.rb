@@ -102,7 +102,7 @@ describe Work do
         expect(votes_count.max).must_equal work_3_votes
       end
 
-      it "if there is a tie with votes, it picks the most recent" do
+      it "if there is a tie with votes, it picks the one with alphabetically lower title" do
         vote_14 = Vote.create(work_id: works(:work_4).id, user_id: users(:user_4).id)
         # puts vote_14.valid? => true
         spotlight = Work.spotlight

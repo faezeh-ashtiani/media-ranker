@@ -1,0 +1,43 @@
+vote_1:
+  work: work_1
+  user: user_1
+vote_2:
+  work: work_2
+  user: user_1
+vote_3:
+  work: work_3
+  user: user_1
+vote_4:
+  work: work_2
+  user: user_2
+vote_5:
+  work: work_3
+  user: user_2
+vote_6:
+  work: work_3
+  user: user_3
+vote_7:
+  work: work_1
+  user: user_4
+vote_8:
+  work: work_4
+  user: user_3
+vote_9:
+  work: work_4
+  user: user_1
+vote_10:
+  work: work_4
+  user: user_2
+vote_11:
+  work: work_5
+  user: user_1
+vote_12:
+  work: work_6
+  user: user_4
+vote_13:
+  work: work_6
+  user: user_1
+vote_14:
+  work: work_3
+  user: user_4
+

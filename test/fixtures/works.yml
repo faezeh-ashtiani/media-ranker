@@ -16,3 +16,21 @@ work_3:
   creator: Syble Kuhn
   publication_year: 1970
   description: Incidunt molestias deserunt laudantium.
+work_4:
+  category: album
+  title: Kreb-Full-o Been
+  creator: Ms. Trevion Buckridge
+  publication_year: 2016
+  description: Vero consectetur delectus consequatur id aut accusantium unde excepturi.
+work_5:
+  category: album
+  title: Major Cup
+  creator: Jayde Bartoletti
+  publication_year: 1944
+  description: Quis recusandae cum est facere consequatur minima magni et.
+work_6:
+  category: book
+  title: Dare to Lead
+  creator: Brene Brown
+  publication_year: 2016
+  description: How to ve brave and volnurable in leadership

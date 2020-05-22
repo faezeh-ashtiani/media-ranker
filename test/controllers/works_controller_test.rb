@@ -1,7 +1,6 @@
 require "test_helper"
 
 describe WorksController do
-
   describe "index" do
     it "responds with success when there are many works saved" do
       get "/works"

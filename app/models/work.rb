@@ -13,6 +13,7 @@ class Work < ApplicationRecord
   end
 
   def self.spotlight
-    all.sort{ |a, b| b.votes.count <=> a.votes.count }.first
+    sort_by_votes = all.sort{ |a, b| b.votes.count <=> a.votes.count }
+    sort_by_votes.sort{ |a, b| b.created_at <=> a.created_at }.first
   end
 end

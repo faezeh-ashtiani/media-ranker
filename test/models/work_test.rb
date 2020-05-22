@@ -22,7 +22,7 @@ describe Work do
     @work_album.save
     work = Work.find_by(title: "21")
     [:category ,:title, :creator, :publication_year, :description].each do |field|
-    expect(work).must_respond_to field
+      expect(work).must_respond_to field
     end
   end
 

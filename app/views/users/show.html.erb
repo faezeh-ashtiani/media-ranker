@@ -1,6 +1,6 @@
 <main>
   <h2>User Summary: <%= link_to @user.username, user_path(@user.id) %></h2>
-  <p>Joined site <%= @user.created_at %></p>
+  <p>Joined site <%= @user.created_at.strftime("%B %e, %Y") %></p>
 
   <section class="user-votes__container">
     <h3 class="user-votes__header">Votes</h3>

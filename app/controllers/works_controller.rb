@@ -28,7 +28,9 @@ class WorksController < ApplicationController
     else
       flash.now[:warning] = [ "A problem occurred: Could not create #{@work.category}" ]
       if @work.errors.any?
-        @work.errors.each << flash[:warning]
+        @work.errors.each do |error|
+          flash[:warning] << error
+        end
       end
       render :new, status: :bad_request
       return

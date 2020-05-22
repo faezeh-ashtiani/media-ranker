@@ -1,16 +1,16 @@
-book_1:
+work_1:
   category: album
   title: Wake-up Pie
   creator: Timmy Streich
   publication_year: 1919
   description: Voluptatem consequatur qui consectetur nisi officiis culpa.
-book_2:
+work_2:
   category: movie
   title: Bad Moms
   creator: John Lucas
   publication_year: 2016
   description: When three overworked and under-appreciated moms are pushed beyond their limits, they ditch their conventional responsibilities for a jolt of long overdue freedom, fun, and comedic self-indulgence.
-book_3:
+work_3:
   category: book
   title: Winter Pie
   creator: Syble Kuhn
